@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>HroWeb E-SHOP</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/response.css" rel="stylesheet">
+    <link href="css/fontelo.css" rel="stylesheet">
+    <link href="css/animation.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+.featured > h3
+{
+    background-color: #3C566F;
+    color: #fff;
+    padding: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.itemBlock
+{
+    background-color: #DE1616
+}
+.itemBlock > .imgHolder > a > img
+{
+    width: 100%;
+    overflow: hidden
+}
+.itemDesc
+{
+    color: #fff;
+    padding: 5px;
+}
+.itemDesc .itemTitle
+{
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+.itemBlock .price
+{
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+.main
+{
+    text-decoration: line-through;
+    color: #CACACA;
+    font-size: 14px;
+}
+.discount
+{
+
+}
+.product-actions
+{
+    color: #fff;
+    display: table;
+    width: 100%;
+    overflow: hidden;
+    font-size: 12px
+}
+.product-actions>span
+{
+    position: relative;
+    border-left: 0;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    padding: 9px 0 0 8px;
+    display: table-cell;
+    transition: all 0.6s;
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+    -ms-transition: all 0.6s;
+    -o-transition: all 0.6s;
+}
+.product-actions>span.current
+{
+    width: auto;
+}
+span.action-wrapper {
+    position: relative;
+    display: block;
+}
+.product-actions>span.current span.action-name {
+    left: 25px;
+    top: 1px;
+    width: auto;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    -ms-opacity: 1;
+    -o-opacity: 1;
+    white-space: nowrap;
+}
+span.action-name {
+    position: absolute;
+    left: 85px;
+    text-transform: uppercase;
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    -ms-opacity: 0;
+    -o-opacity: 0;
+    transition: all 0.3s;
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+    -ms-transition: all 0.6s;
+    -o-transition: all 0.6s;
+}
+.add-to-favorites
+{
+    background-color: #B90505;
+}
+.details
+{
+    background-color: #754818;
+}
+.add-to-cart
+{
+    background-color: #104194;
+}
+.discountBlock
+{
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    font: bold 16px sans-serif;
+    color: #fff;
+    width: 86px;
+    background-color: rgba(0,0,0,.3);
+    padding: 10px 20px;
+    text-align: center;
+}
+.fi-controls
+{
+    position: absolute;
+    top: -59px;
+    right: 0;
+}
+.fi-controls > a
+{
+    line-height: 49px;
+    padding: 0 15px;
+    transition: all 0.3s;
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+    -ms-transition: all 0.6s;
+    -o-transition: all 0.6s;
+}
+.fi-controls > a:hover
+{
+    background-color: rgba(0,0,0,0.3);
+}
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+            <div class="featured">
+              <h3>Featured products</h3>
+              <div class="carousel slide" id="fItems">
+                <div class="carousel-inner">
+                  <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                      <div class="item active">
+                        <div class="itemBlock">
+                          <div class="imgHolder">
+                            <span class="discountBlock">10%</span>
+                            <a href="#"><img src="img/products/product1.jpg" alt=""></a>
+                          </div>
+                          <div class="itemDesc">
+                            <span class="itemTitle">Female bag</span>
+                            <div class="price">
+                              <span class="main">60.000 AMD</span>
+                              <span class="discount">45.000 AMD</span>
+                            </div>
+                            <div class="rates">
+                              
+                            </div>
+                            <div class="product-actions">
+                              <span class="add-to-cart current">
+                                <span class="action-wrapper">
+                                  <i class="icons icon-basket-2"></i>
+                                  <span class="action-name">Add to cart</span>
+                                </span>
+                              </span>
+                              <span class="details">
+                                <span class="action-wrapper">
+                                  <i class="icons icon-docs"></i>
+                                  <span class="action-name">Details</span>
+                                </span>
+                              </span>
+                              <span class="add-to-favorites">
+                                <span class="action-wrapper">
+                                  <i class="icons icon-heart-empty"></i>
+                                  <span class="action-name">Add to wishlist</span>
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                      <div class="item active">
+                        <div class="itemBlock">
+                          <div class="imgHolder">
+                            <span class="discountBlock">10%</span>
+                            <a href="#"><img src="img/products/product2.jpg" alt=""></a>
+                          </div>
+                          <div class="itemDesc">
+                            <span class="itemTitle">Female bag</span>
+                            <div class="price">
+                              <span class="main">60.000 AMD</span>
+                              <span class="discount">45.000 AMD</span>
+                            </div>
+                            <div class="rates">
+                              
+                            </div>
+                            <div class="product-actions">
+                              <span class="add-to-cart current">
+                                <span class="action-wrapper">
+                                  <i class="icons icon-basket-2"></i>
+                                  <span class="action-name">Add to cart</span>
+                                </span>
+                              </span>
+                              <span class="details">
+                                <span class="action-wrapper">
+                                  <i class="icons icon-docs"></i>
+                                  <span class="action-name">Details</span>
+                                </span>
+                              </span>
+                              <span class="add-to-favorites">
+                                <span class="action-wrapper">
+                                  <i class="icons icon-heart-empty"></i>
+                                  <span class="action-name">Add to wishlist</span>
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                    
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                      <div class="item active">
+                        <div class="itemBlock">
+                          <div class="imgHolder">
+                            <span class="discountBlock">10%</span>
+                            <a href="#"><img src="img/products/product3.jpg" alt=""></a>
+                          </div>
+                          <div class="itemDesc">
+                            <span class="itemTitle">Female bag</span>
+                            <div class="price">
+                              <span class="main">60.000 AMD</span>
+                              <span class="discount">45.000 AMD</span>
+                            </div>
+                            <div class="rates">
+                              
+                            </div>
+                            <div class="product-actions">
+                              <span class="add-to-cart current">
+                                <span class="action-wrapper">
+                                  <i class="icons icon-basket-2"></i>
+                                  <span class="action-name">Add to cart</span>
+                                </span>
+                              </span>
+                              <span class="details">
+                                <span class="action-wrapper">
+                                  <i class="icons icon-docs"></i>
+                                  <span class="action-name">Details</span>
+                                </span>
+                              </span>
+                              <span class="add-to-favorites">
+                                <span class="action-wrapper">
+                                  <i class="icons icon-heart-empty"></i>
+                                  <span class="action-name">Add to wishlist</span>
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                      <div class="item">
+                        <div class="itemBlock">
+                          <div class="imgHolder">
+                            <span class="discountBlock">10%</span>
+                            <a href="#"><img src="img/products/product2.jpg" alt=""></a>
+                          </div>
+                          <div class="itemDesc">
+                            <span class="itemTitle">Female bag</span>
+                            <div class="price">
+                              <span class="main">60.000 AMD</span>
+                              <span class="discount">45.000 AMD</span>
+                            </div>
+                            <div class="rates">
+                              
+                            </div>
+                            <div class="product-actions">
+                              <span class="add-to-cart current">
+                                <span class="action-wrapper">
+                                  <i class="icons icon-basket-2"></i>
+                                  <span class="action-name">Add to cart</span>
+                                </span>
+                              </span>
+                              <span class="details">
+                                <span class="action-wrapper">
+                                  <i class="icons icon-docs"></i>
+                                  <span class="action-name">Details</span>
+                                </span>
+                              </span>
+                              <span class="add-to-favorites">
+                                <span class="action-wrapper">
+                                  <i class="icons icon-heart-empty"></i>
+                                  <span class="action-name">Add to wishlist</span>
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                      <div class="item">
+                        <div class="itemBlock">
+                          <div class="imgHolder">
+                            <span class="discountBlock">10%</span>
+                            <a href="#"><img src="img/products/product1.jpg" alt=""></a>
+                          </div>
+                          <div class="itemDesc">
+                            <span class="itemTitle">Female bag</span>
+                            <div class="price">
+                              <span class="main">60.000 AMD</span>
+                              <span class="discount">45.000 AMD</span>
+                            </div>
+                            <div class="rates">
+                              
+                            </div>
+                            <div class="product-actions">
+                              <span class="add-to-cart current">
+                                <span class="action-wrapper">
+                                  <i class="icons icon-basket-2"></i>
+                                  <span class="action-name">Add to cart</span>
+                                </span>
+                              </span>
+                              <span class="details">
+                                <span class="action-wrapper">
+                                  <i class="icons icon-docs"></i>
+                                  <span class="action-name">Details</span>
+                                </span>
+                              </span>
+                              <span class="add-to-favorites">
+                                <span class="action-wrapper">
+                                  <i class="icons icon-heart-empty"></i>
+                                  <span class="action-name">Add to wishlist</span>
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+                <div class="fi-controls">
+                  <a href="#fItems" class="left" data-slide="prev">
+                    <span class="ic-arrow icon-left-open"></span>
+                  </a>
+                  <a href="#fItems" class="right" data-slide="next">
+                    <span class="ic-arrow icon-right-open"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ocol-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="featured">
+              <h3>HOT ITEMS</h3>
+              <div class="carousel slide" id="hotItem">
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <div class="itemBlock">
+                      <div class="imgHolder">
+                        <span class="discountBlock">10%</span>
+                        <a href="#"><img src="img/products/product3.jpg" alt=""></a>
+                      </div>
+                      <div class="itemDesc">
+                        <span class="itemTitle">Female bag</span>
+                        <div class="price">
+                          <span class="main">60.000 AMD</span>
+                          <span class="discount">45.000 AMD</span>
+                        </div>
+                        <div class="rates">
+                          
+                        </div>
+                        <div class="product-actions">
+                          <span class="add-to-cart current">
+                            <span class="action-wrapper">
+                              <i class="icons icon-basket-2"></i>
+                              <span class="action-name">Add to cart</span>
+                            </span>
+                          </span>
+                          <span class="details">
+                            <span class="action-wrapper">
+                              <i class="icons icon-docs"></i>
+                              <span class="action-name">Details</span>
+                            </span>
+                          </span>
+                          <span class="add-to-favorites">
+                            <span class="action-wrapper">
+                              <i class="icons icon-heart-empty"></i>
+                              <span class="action-name">Add to wishlist</span>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="item">
+                    <div class="itemBlock">
+                      <div class="imgHolder">
+                        <span class="discountBlock">10%</span>
+                        <a href="#"><img src="img/products/product1.jpg" alt=""></a>
+                      </div>
+                      <div class="itemDesc">
+                        <span class="itemTitle">Female bag</span>
+                        <div class="price">
+                          <span class="main">60.000 AMD</span>
+                          <span class="discount">45.000 AMD</span>
+                        </div>
+                        <div class="rates">
+                          
+                        </div>
+                        <div class="product-actions">
+                          <span class="add-to-cart current">
+                            <span class="action-wrapper">
+                              <i class="icons icon-basket-2"></i>
+                              <span class="action-name">Add to cart</span>
+                            </span>
+                          </span>
+                          <span class="details">
+                            <span class="action-wrapper">
+                              <i class="icons icon-docs"></i>
+                              <span class="action-name">Details</span>
+                            </span>
+                          </span>
+                          <span class="add-to-favorites">
+                            <span class="action-wrapper">
+                              <i class="icons icon-heart-empty"></i>
+                              <span class="action-name">Add to wishlist</span>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="fi-controls">
+                  <a href="#hotItem" class="left" data-slide="prev">
+                    <span class="ic-arrow icon-left-open"></span>
+                  </a>
+                  <a href="#hotItem" class="right" data-slide="next">
+                    <span class="ic-arrow icon-right-open"></span>
+                  </a>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>
